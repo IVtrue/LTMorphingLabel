@@ -127,7 +127,7 @@ typealias LTMorphingSkipFramesClosure =
             guard text != newValue else { return }
 
             previousText = text ?? ""
-            diffResults = previousText.diffWith(newValue)
+            diffResults = previousText.diffWith(newValue, noShift: morphingEffect == .spin)
             super.text = newValue ?? ""
             
             morphingProgress = 0.0

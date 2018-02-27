@@ -31,6 +31,7 @@ import UIKit
 
     case scale = 0
     case evaporate
+    case spin
     case fall
     case pixelate
     case sparkle
@@ -38,13 +39,15 @@ import UIKit
     case anvil
     
     public static let allValues = [
-        "Scale", "Evaporate", "Fall", "Pixelate", "Sparkle", "Burn", "Anvil"
+        "Scale", "Spin", "Evaporate", "Fall", "Pixelate", "Sparkle", "Burn", "Anvil"
     ]
     
     public var description: String {
         switch self {
         case .evaporate:
             return "Evaporate"
+        case .spin:
+            return "Spin"
         case .fall:
             return "Fall"
         case .pixelate:

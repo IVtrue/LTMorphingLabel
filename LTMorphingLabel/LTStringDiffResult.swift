@@ -31,7 +31,7 @@ public typealias LTStringDiffResult = ([LTCharacterDiffResult], skipDrawingResul
 
 public extension String {
     
-    public func diffWith(_ anotherString: String?) -> LTStringDiffResult {
+    public func diffWith(_ anotherString: String?, noShift: Bool = false) -> LTStringDiffResult {
         
         guard let anotherString = anotherString else {
             let diffResults: [LTCharacterDiffResult] =
@@ -60,30 +60,46 @@ public extension String {
             
             // Search left character in the new string
             var foundCharacterInRhs = false
-            for (j, newChar) in newChars {
-                if skipIndexes.contains(j) || leftChar != newChar {
-                    continue
-                }
-                
-                skipIndexes.append(j)
-                foundCharacterInRhs = true
-                if i == j {
-                    // Character not changed
-                    diffResults[i] = .same
-                } else {
-                    // foundCharacterInRhs and move
-                    let offset = j - i
-                    
-                    if i <= rhsLength - 1 {
-                        // Move to a new index and add a new character to new original place
-                        diffResults[i] = .moveAndAdd(offset: offset)
-                    } else {
-                        diffResults[i] = .move(offset: offset)
+            
+
+            if noShift {
+                for(j, newChar) in newChars {
+                    if leftChar != newChar {
+                        continue
                     }
                     
-                    skipDrawingResults[j] = true
+                    if i == j && lhsLength == rhsLength {
+                        // Character not changed
+                        foundCharacterInRhs = true
+                        diffResults[i] = .same
+                    }
                 }
-                break
+            } else {
+                for (j, newChar) in newChars {
+                    if skipIndexes.contains(j) || leftChar != newChar {
+                        continue
+                    }
+                    
+                    skipIndexes.append(j)
+                    foundCharacterInRhs = true
+                    if i == j {
+                        // Character not changed
+                        diffResults[i] = .same
+                    } else {
+                        // foundCharacterInRhs and move
+                        let offset = j - i
+                        
+                        if i <= rhsLength - 1 {
+                            // Move to a new index and add a new character to new original place
+                            diffResults[i] = .moveAndAdd(offset: offset)
+                        } else {
+                            diffResults[i] = .move(offset: offset)
+                        }
+                        
+                        skipDrawingResults[j] = true
+                    }
+                    break
+                }
             }
             
             if !foundCharacterInRhs {
@@ -98,5 +114,6 @@ public extension String {
         return (diffResults, skipDrawingResults)
         
     }
+    
     
 }

@@ -21,7 +21,12 @@ class LTDemoViewController : UIViewController, LTMorphingLabelDelegate {
         "MacBook Pro🔥", "Mac Pro⚡️",
         "爱老婆",
         "नमस्ते दुनिया",
-        "हिन्दी भाषा"
+        "हिन्दी भाषा",
+        "1000",
+        "1010",
+        "2300",
+        "2350",
+        "12350"
     ]
     fileprivate var text: String {
         i = i >= textArray.count - 1 ? 0 : i + 1
