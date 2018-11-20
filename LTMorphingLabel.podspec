@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   s.resources    = "LTMorphingLabel/Particles/*.png"
   s.frameworks   = "UIKit", "Foundation", "QuartzCore"
   s.requires_arc = true
-  s.swift_version = 4.2
-  
+  s.swift_version = '4.2'
+
 end
