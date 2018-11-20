@@ -39,7 +39,7 @@ import UIKit
     case anvil
     
     public static let allValues = [
-        "Scale", "Spin", "Evaporate", "Fall", "Pixelate", "Sparkle", "Burn", "Anvil"
+        "Scale", "Evaporate", "Spin", "Fall", "Pixelate", "Sparkle", "Burn", "Anvil"
     ]
     
     public var description: String {
