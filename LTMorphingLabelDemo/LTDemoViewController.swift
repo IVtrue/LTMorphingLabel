@@ -17,7 +17,7 @@ class LTDemoViewController : UIViewController, LTMorphingLabelDelegate {
         "Design", "is how it works.", "- Steve Jobs",
         "Older people", "sit down and ask,", "'What is it?'",
         "but the boy asks,", "'What can I do with it?'.", "- Steve Jobs",
-        "", "Swift", "Objective-C", "iPhone", "iPad", "Mac Mini",
+        "One more thing...", "Swift", "Objective-C", "iPhone", "iPad", "Mac Mini",
         "MacBook Pro🔥", "Mac Pro⚡️",
         "爱老婆",
         "नमस्ते दुनिया",
@@ -43,10 +43,31 @@ class LTDemoViewController : UIViewController, LTMorphingLabelDelegate {
     
     @IBAction func changeText(_ sender: AnyObject) {
         label.text = text
+        if !autoStart.isOn {
+            label.pause()
+            progressSlider.value = 0
+        }
     }
 
     @IBAction func clear(_ sender: Any) {
         label.text = nil
+    }
+    
+    @IBOutlet weak var autoStart: UISwitch!
+    
+    @IBAction func updateAutoStart(_ sender: Any) {
+        progressSlider.isHidden = autoStart.isOn
+        if autoStart.isOn {
+            label.unpause()
+        } else {
+            changeText(NSObject())
+        }
+    }
+    
+    @IBOutlet weak var progressSlider: UISlider!
+    
+    @IBAction func updateProgress(_ sender: Any) {
+        label.updateProgress(progress: progressSlider.value / 100)
     }
     
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {

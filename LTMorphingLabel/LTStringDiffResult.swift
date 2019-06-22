@@ -61,7 +61,6 @@ public extension String {
             // Search left character in the new string
             var foundCharacterInRhs = false
             
-
             if noShift {
                 for(j, newChar) in newChars {
                     if leftChar != newChar {
@@ -114,6 +113,5 @@ public extension String {
         return (diffResults, skipDrawingResults)
         
     }
-    
     
 }

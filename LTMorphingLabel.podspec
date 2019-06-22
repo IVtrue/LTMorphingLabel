@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "LTMorphingLabel"
-  s.version      = "0.5.9"
+  s.version      = "0.7.0"
   s.summary      = "Graceful morphing effects for UILabel written in Swift."
   s.description  = <<-DESC
                    A morphing UILabel subclass written in Swift.
@@ -29,6 +29,6 @@ Pod::Spec.new do |s|
   s.resources    = "LTMorphingLabel/Particles/*.png"
   s.frameworks   = "UIKit", "Foundation", "QuartzCore"
   s.requires_arc = true
-  s.swift_version = '4.2'
+  s.swift_version = '5'
 
 end
