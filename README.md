@@ -1,9 +1,7 @@
 # LTMorphingLabel
 
-[![Travis](https://img.shields.io/travis/lexrus/LTMorphingLabel.svg)](https://travis-ci.org/lexrus/LTMorphingLabel)
-![Language](https://img.shields.io/badge/language-Swift%204-orange.svg)
+![Language](https://img.shields.io/badge/language-Swift%205-orange.svg)
 [![CocoaPods](https://img.shields.io/cocoapods/v/LTMorphingLabel.svg?style=flat)](https://github.com/lexrus/LTMorphingLabel)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![License](https://img.shields.io/github/license/lexrus/LTMorphingLabel.svg?style=flat)
 
 A morphing UILabel subclass written in Swift.
@@ -41,11 +39,6 @@ The ```.Scale``` effect mimicked [Apple's QuickType animation of iOS 8](https://
 
 ## Installation
 
-### [Carthage](https://github.com/Carthage/Carthage)
-
-1. Add this line to your Cartfile: `github "lexrus/LTMorphingLabel"`
-2. Read the [official instruction](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)
-
 ### [CocoaPods](http://cocoapods.org)
 
 1. Install the latest release of CocoaPods: `gem install cocoapods`
@@ -61,31 +54,6 @@ The ```.Scale``` effect mimicked [Apple's QuickType animation of iOS 8](https://
 ## Unit tests
 
 Open the project with Xcode then press command + u.
-
-## Alternative
-
-Even though this lib was used in
-[a few products on App Store](https://github.com/lexrus/LTMorphingLabel/wiki/Apps-using-LTMorphingLabel),
-it’s still an experimental project. Frankly, there’re some nice competitors out
-there guarantee both compatibility and stability.
-And the most outstanding one is
-[ZCAnimatedLabel](https://github.com/overboming/ZCAnimatedLabel).
-I’d like to recommend it for production use.
-
-And finally, [an Android port](https://github.com/hanks-zyh/HTextView).
-
-## Third Party Bindings
-
-### React Native
-You may now use this library with [React Native](https://github.com/facebook/react-native) via the module [here](https://github.com/prscX/react-native-morphing-text)
-
-## Donation
-
-Buy me a coffee? Here is my wallet:
-
-BTC: `3MnMu3Q1UK63dRbwjhwqWSBVLWxy8SPk6b`
-
-ETH: `0x2884F4bE2cBA05395EE0EF997a44aA9B90fD2E2A`
 
 ## License
 
